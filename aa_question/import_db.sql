@@ -1,3 +1,6 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS questions;
+
 PRAGMA foreign_keys = ON;
 
 CREATE TABLE users(
@@ -12,14 +15,32 @@ CREATE TABLE questions(
     body TEXT NOT NULL,
     author_id INTEGER PRIMARY
 
-    FOREIGN KEY(title)
+    FOREIGN KEY(author_id) 
 );
 
-CREATE TABLE question_follows(
-    SELECT
+INSERT INTO 
+users(fname,lname)
+
+VALUES 
+("Wei","Zheng"),("Ala","Benotman"),("App","Academy");
+
+INSERT INTO 
+questions(title,body,author_id)
+
+VALUES 
+("Wei Question","WEI WEI WEI",1),
+("Ala Question","ALA ALA ALA",2),
+("App Question","APP APP APP",3);
+
+
+
+
+
+-- CREATE TABLE question_follows(
+--     SELECT
         
 
-);
+-- );
 
 -- sqlite> SELECT * FROM questions;
 -- 1|Ned Question|NED NED NED|1
