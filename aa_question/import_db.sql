@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS question_follows;
 DROP TABLE IF EXISTS questions;
 DROP TABLE IF EXISTS users;
 
@@ -18,6 +19,15 @@ CREATE TABLE questions (
     FOREIGN KEY (author_id) REFERENCES users(id)
 );
 
+CREATE TABLE question_follows (
+    id INTEGER PRIMARY KEY,
+    users_id INTEGER NOT NULL,
+    questions_id INTEGER NOT NULL, 
+
+     FOREIGN KEY (users_id) REFERENCES users(id),
+     FOREIGN KEY (questions_id) REFERENCES questions(id)
+);
+
 INSERT INTO 
     users(fname, lname)
 
@@ -31,6 +41,18 @@ VALUES
 ("Wei Question","WEI WEI WEI",(SELECT id FROM users WHERE fname = "Wei")),
 ("Ala Question","ALA ALA ALA",(SELECT id FROM users WHERE fname = "Ala")),
 ("App Question","APP APP APP",(SELECT id FROM users WHERE fname = "App"));
+
+INSERT INTO 
+    question_follows(users_id, questions_id)
+
+VALUES 
+    ((SELECT id FROM users WHERE fname = "Wei" AND lname="Zheng"),
+    (SELECT id FROM questions WHERE title = "Wei Question" AND body = "WEI WEI WEI" )),
+
+    ((SELECT id FROM users WHERE fname = "Ala" AND lname="Benotman"),
+    (SELECT id FROM questions WHERE title = "Ala Questions" AND body = "ALA ALA ALA" ));
+    
+    
 
 
 
