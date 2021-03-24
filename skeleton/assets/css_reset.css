@@ -1,0 +1,16 @@
+body,h1,h2,ul,li,a,caption,header,ol,nav,aside,footer,html,figure {
+    margin:0;
+    padding: 0 ;
+    border: 0; 
+    font-size: inherit ;
+    font: inherit; 
+    /* vertical-align: ; */
+}
+
+body {
+    line-height: 1.5;
+}
+
+img {
+    width: inherit;
+}
