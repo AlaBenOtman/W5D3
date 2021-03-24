@@ -51,11 +51,26 @@ ol {
   margin-bottom: 15px;
   list-style: upper-roman inside;
 }
-h2 #reviews {
-  display: flex; 
-  background: orange;
-
+select {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
+
+#name {
+  display: flex;
+}
+
+textarea {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#review {
+  display: flex;
+}
+
 
 .user_review h4 {
   
